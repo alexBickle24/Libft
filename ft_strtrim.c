@@ -3,36 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:04:17 by alcarril          #+#    #+#             */
-/*   Updated: 2024/09/30 23:56:35 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/01 18:04:21 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// llevandotelo hasta el finalo hasta el principio
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
-	int	i;
-	char *ptr;
-	
-	i = -1;
-	len = ft_strlen(s1) + 1;
-	while (s1[len - len] != set[i++])
+	size_t	s1_len;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = - 1;
+	while (set[j++] != '\0')//aquí tendria que guardar j
 	{
-		if(i-1)
-			len++;
+		while (s1[i] != '\0' && s1[i] == set[j])
+		{
+			i++;
+		}
 	}
-	while(s1[len--])
+	j = - 1;
+	while (set[j++] != '\0')//aquí tendria que guardar j
 	{
-		if()
-			len--;	
+		while (s1_len > 0 && s1[i] == set[j])
+		{
+			i++;
+		}
 	}
-	ptr = (char *)malloc()
-	if (!(ptr))
-		return(0);
-	
+	return (ft_substr());
 }
-//la otra opciones hacer un substring dadole los parametros
-//el len y el size los calcularia con los bucles
+ 
