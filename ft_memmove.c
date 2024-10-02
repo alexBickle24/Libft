@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 12:36:51 by alcarril          #+#    #+#             */
-/*   Updated: 2024/09/28 13:55:30 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/02 22:27:23 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	}
 }
+//de esta manera esta mal porque tengo que imprimir los primeros asi estaria imprimendo los ultimo que esmas dificil
+//asi que deberia guardar este metodo y apuntarlo como ejercicio extra

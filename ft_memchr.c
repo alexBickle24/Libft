@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:47:58 by alcarril          #+#    #+#             */
-/*   Updated: 2024/09/24 21:35:00 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/02 22:25:23 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,4 @@ void	*memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
+//podria darse el caso de que n sea mayot que es size de la cadena original en cuyo caso supongoq ue tendria que meter nulos 

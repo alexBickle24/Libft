@@ -6,43 +6,46 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:20:56 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/02 00:09:33 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/02 20:51:32 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+unsigned int	ft_is_negative(int *num)
+{
+	if (*num < 0)
+	{
+		return(1);
+	}
+	return(0);
+}
+unsigned int	ft_uint_len(int num)
+{
+	unsigned int	j;
+
+	j = 0;
+	while (num >= 10)
+	{
+		num = num / 10;
+		j++;
+	}
+	return(j+1);
+}
 
 char	*ft_itoa(int n)
 {
+	unsigned	int	i;
+	unsigned	int	j;
+	char	*ptr;
 	int	rest;
 	
-	//char	*malloc_calculator(int num)
-
-	int	i;
-	int	j;
-	char	*ptr;
-	
-	i = 0;
-	j = 0;
-	//va ser mi funcion auxiliar int  sign(n) lo que devuelva lo
-	if (n < 0)
-	{
-		n = -n;
-		i = 1;
-	}
-	//va ser mi funcion auxiliar
-	while (n > 10)
-	{
-		n = n / 10;
-		j++;
-	}
-	//aqui podria usar calloc para no tenner que usar el calloc
-	ptr = (char *)malloc(j + i + 1);
+	i = ft_is_negative(&n);
+	j = ft_uint_len(n);
+	ptr = (char *)malloc(i + j + 1);
 	if (!(ptr))
 		return(0);
-	//aqui acaba mi funcion auxiliar
-	if (i = 1)
+	if (i)
 	{
-		ptr[j + i] = '-';
+		ptr[0] = '-';
 	}
 	while (n >= 10)
 	{
@@ -51,6 +54,6 @@ char	*ft_itoa(int n)
 		n = n / 10;
 		j--;
 	}
-	ptr[j + i] = '\0';
+	ptr[ft_uint_len(n) + i] = '\0';
 	return(ptr);
 }
