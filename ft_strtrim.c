@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:04:17 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/03 23:35:09 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/03 23:39:55 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		j;
 
-	s1_len = ft_strlen(s1) + 1;
+	s1_len = ft_strlen(s1);
 	i = -1;
 	j = - 1;
 	while (set[j++] != '\0')//aquí tendria que guardar i
@@ -29,11 +29,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = - 1;
 	while (set[j++] != '\0')//aquí tendria que guardar i
 	{
-		while (s1_len > 0 && s1[s1_len - 1] == set[j])
+		while (s1_len >= 0 && s1[s1_len] == set[j])
 		{
 			s1_len--;
 		}
 	}
-	return (ft_substr(s1, i, (i - s1_len)));//ver si tengo que poner el +1
+	return (ft_substr(s1, i, (i - s1_len + 1)));//ver si tengo que poner el +1
 }
  
