@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:38:25 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/02 20:50:01 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/03 13:43:25 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (j > ft_strlen(s) - 1)
 		return (0);
-	ptr = malloc(len + 1);
+	ptr =(char *)malloc(len + 1);
 	if (!(ptr))
 		return (0);
 	while (i < len && s[j] != '\0')
