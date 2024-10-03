@@ -6,11 +6,11 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:20:56 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/02 20:51:32 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/03 23:03:49 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_is_negative(int *num)
+ static unsigned int	ft_is_negative(int *num)
 {
 	if (*num < 0)
 	{
@@ -18,7 +18,7 @@ unsigned int	ft_is_negative(int *num)
 	}
 	return(0);
 }
-unsigned int	ft_uint_len(int num)
+static unsigned int	ft_uint_len(int num)
 {
 	unsigned int	j;
 

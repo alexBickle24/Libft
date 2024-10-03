@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_srtmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:39:21 by alex              #+#    #+#             */
-/*   Updated: 2024/10/02 13:12:46 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/03 23:13:59 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		str[i] = f(i , s[i]);
 		i++;
 	}
-	s[i] = '\0';
+	str[i] = '\0';
 	return (str);
 }
 //A cada uno de los valores de s, se le palica la funcion f, que devuelve un char 

@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:04:17 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/02 23:08:04 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/03 23:35:09 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 			i++;
 		}
 	}
-	}
 	j = - 1;
 	while (set[j++] != '\0')//aquí tendria que guardar i
 	{
@@ -35,6 +34,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 			s1_len--;
 		}
 	}
-	return (ft_substr(s1, i, (i - s1_len));
+	return (ft_substr(s1, i, (i - s1_len)));//ver si tengo que poner el +1
 }
  
