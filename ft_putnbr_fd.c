@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 17:33:05 by alex              #+#    #+#             */
-/*   Updated: 2024/10/03 23:05:56 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/04 14:15:16 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static unsigned int	ft_is_negative(int *num)
 {
@@ -45,7 +47,7 @@ void    ft_putnbr_fd(int n, int fd)
 	while (n >= 10)
 	{
 		rest = (n % 10) + '0';
-		write(fd, rest, 1);
+		write(fd, &rest, 1);
 		n = n / 10;
 		j--;
 	}

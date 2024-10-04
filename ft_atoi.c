@@ -3,18 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 21:01:02 by alcarril          #+#    #+#             */
-/*   Updated: 2024/09/26 21:52:22 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/04 09:09:32 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-*/
 
 int	ft_atoi(const char *nptr)
 {
@@ -45,11 +39,11 @@ int	ft_atoi(const char *nptr)
 /*
 int main(void)
 {
-	const char cadena[] = "  -+-+34343 -22";
+	const char cadena[] = "  3434322";
 	int numero = ft_atoi(cadena);
-	int atoi_num = atoi(cadena);
+	//int atoi_num = atoi(cadena);
 	printf ("%d", numero);
-	printf ("%d", atoi_num);
+	//printf ("%d", atoi_num);
 	return(0); 
 }
 */

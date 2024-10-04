@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:20:56 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/03 23:03:49 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/04 14:56:17 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- static unsigned int	ft_is_negative(int *num)
+#include "libft.h"
+
+static unsigned int	ft_is_negative(int *num)
 {
 	if (*num < 0)
 	{
@@ -56,4 +58,9 @@ char	*ft_itoa(int n)
 	}
 	ptr[ft_uint_len(n) + i] = '\0';
 	return(ptr);
+}
+
+int main(void)
+{
+	
 }

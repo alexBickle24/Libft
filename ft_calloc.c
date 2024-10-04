@@ -3,27 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:00:20 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/03 22:54:37 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/04 17:40:17 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	ptr = malloc(size * nmemb);
+	ptr = (char *)malloc((size * nmemb));
 	if (!(ptr))
 		return (0);
-	while (i < nmemb)
+	while (i < (nmemb * size))
 	{
 		*(char *)&ptr[i] = 0;
-		ptr++;
 		i++;
 	}
-	return (ptr);
+	return ((void *)ptr);
 }
+/*
+int	main(void)
+{
+	void	*aux;
+	size_t	num;
+	size_t	size;
+	int	i = 0;
+	
+	num = 1;
+	size = 12;
+	aux = ft_calloc(size, num);
+	printf("%c", *(char *)&aux[i]);(char *)&aux[i] pero el free lo tengo maal 
+	//porque he movido el puntero 
+	free(aux);
+	return (0);
+}
+*/

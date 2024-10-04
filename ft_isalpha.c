@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:41:26 by alcarril          #+#    #+#             */
-/*   Updated: 2024/09/19 17:11:33 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/04 12:09:24 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 19:39:39 by alcarril          #+#    #+#             */
-/*   Updated: 2024/09/19 19:42:59 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/04 12:09:42 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 126)
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }

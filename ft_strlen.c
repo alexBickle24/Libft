@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 19:59:49 by alcarril          #+#    #+#             */
-/*   Updated: 2024/09/19 20:22:15 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/04 14:56:40 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stddef.h>
+#include <stddef.h>
 
 size_t	ft_strlen(const char *s)
 {
