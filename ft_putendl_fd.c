@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 17:29:48 by alex              #+#    #+#             */
-/*   Updated: 2024/10/04 14:14:29 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/05 22:15:40 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void    ft_putendl_fd(char *s, int fd)
         write(fd, s, 1);
         s++;
     }
-    write(fd, s, 1);
+    write(fd, "\n", 1);
 }

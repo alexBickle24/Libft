@@ -3,52 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 17:33:05 by alex              #+#    #+#             */
-/*   Updated: 2024/10/04 14:15:16 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/05 23:53:06 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_is_negative(int *num)
+static void	ft_is_negative(int *num, int fd)
 {
 	if (*num < 0)
 	{
-		return(1);
+		*num = *num * -1;
+		write(fd, "-", 1);
 	}
-	return(0);
 }
 static unsigned int	ft_uint_len(int num)
 {
-	unsigned int	j;
+	unsigned int	i;
 
-	j = 0;
+	i = 0;
 	while (num >= 10)
 	{
 		num = num / 10;
-		j++;
+		i++;
 	}
-	return(j+1);
+	return(i+1);
 }
 void    ft_putnbr_fd(int n, int fd)
 {
 	unsigned	int	i;
-	unsigned	int	j;
-	int	rest;
+	unsigned	int	len;
+	unsigned	int multiplicador;
+	unsigned	int aux;
+	unsigned	int rest;
 	
-	i = ft_is_negative(&n);
-	j = ft_uint_len(n);
-	if (i)
+	rest = 0;
+	aux = 0;
+	multiplicador = 10;
+	ft_is_negative(&n, fd);
+	len = ft_uint_len(n);
+	while (len-- > 1)
+		multiplicador = 1 * multiplicador;
+	while(n >= 10)
 	{
-		write(fd , "-", 1);
-	}
-	while (n >= 10)
-	{
-		rest = (n % 10) + '0';
+		rest = (n / multiplicador) - aux;
+		aux = rest * 10;
 		write(fd, &rest, 1);
-		n = n / 10;
-		j--;
+		multiplicador = multiplicador / 10;
 	}
+	write(fd, n, 1);
 }
