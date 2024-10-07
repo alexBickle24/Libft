@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:42:13 by alcarril          #+#    #+#             */
-/*   Updated: 2024/09/27 18:42:46 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/07 18:18:46 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 int	ft_tolower(int c)
 {
