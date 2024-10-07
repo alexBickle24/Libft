@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 13:19:38 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/06 20:32:41 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/07 15:04:20 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
+	if (!s1 || !s2)
+		return(NULL);
 	j = 0;
 	total_leng = ft_strlen(s1) + ft_strlen(s2) + 1;
 	i = 0;

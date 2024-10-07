@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:39:21 by alex              #+#    #+#             */
-/*   Updated: 2024/10/06 20:42:49 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/07 15:05:38 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char	*str;
 
+	if(!s)
+		return(NULL);
 	str = (char *)malloc(ft_strlen(s) + 1);
 	if (!str)
 		return(0);
