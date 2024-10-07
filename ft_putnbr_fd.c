@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 17:33:05 by alex              #+#    #+#             */
-/*   Updated: 2024/10/05 23:53:06 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/06 18:42:30 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static void	ft_is_negative(int *num, int fd)
 }
 static unsigned int	ft_uint_len(int num)
 {
-	unsigned int	i;
+	int	i;
 
-	i = 0;
+	i = 1;
 	while (num >= 10)
 	{
 		num = num / 10;
@@ -34,25 +34,26 @@ static unsigned int	ft_uint_len(int num)
 }
 void    ft_putnbr_fd(int n, int fd)
 {
-	unsigned	int	i;
 	unsigned	int	len;
-	unsigned	int multiplicador;
-	unsigned	int aux;
+	unsigned	int mult;
 	unsigned	int rest;
+	unsigned	int print;
+	unsigned	int mult_aux;
 	
 	rest = 0;
-	aux = 0;
-	multiplicador = 10;
-	ft_is_negative(&n, fd);
-	len = ft_uint_len(n);
+ 	mult = 1;
+	ft_is_negative(&n, fd);//
+	len = ft_uint_len(n) - 1;//
 	while (len-- > 1)
-		multiplicador = 1 * multiplicador;
-	while(n >= 10)
+		mult = 10 * mult;//
+	mult_aux = mult;//
+	while(mult >= 10)//
 	{
-		rest = (n / multiplicador) - aux;
-		aux = rest * 10;
-		write(fd, &rest, 1);
-		multiplicador = multiplicador / 10;
+		print = ((n / mult) - rest) + '0';
+		rest = (n / mult) * 10;
+		write(fd, &print, 1);
+		mult = mult / 10;
 	}
-	write(fd, n, 1);
+	n = (n / mult_aux) + '0';//
+	write(fd, &n, 1);
 }

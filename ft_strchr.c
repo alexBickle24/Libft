@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:47:51 by alcarril          #+#    #+#             */
-/*   Updated: 2024/09/24 20:29:17 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/06 18:56:54 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*#include <stdio.h>*/
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -22,13 +20,4 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	const char cadena[] = "alocao";
-	int caracter = 108 ;
-	char *output = ft_strchr(cadena, caracter);
-	printf("%s", output);
-	return (0);
-}
-*/
+

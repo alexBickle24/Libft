@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:00:20 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/04 17:40:17 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/07 08:21:07 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (0);
 	while (i < (nmemb * size))
 	{
-		*(char *)&ptr[i] = 0;
+		*(char *)(ptr + i) = 0;
 		i++;
 	}
 	return ((void *)ptr);
