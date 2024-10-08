@@ -6,19 +6,19 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:22:17 by alex              #+#    #+#             */
-/*   Updated: 2024/10/08 21:13:16 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/08 22:34:44 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_counter_begin(char *s, char c)
+char	*ft_counter_begin(const char *s, char c)
 {
 	size_t	i;
 	size_t	j;
 	char	*aux_b;
 
-	aux_b = (((ft_strlen(s) / 2) + 1), 1);
+	aux_b = ft_calloc(((ft_strlen(s) / 2) + 1), 1);
 	while (s[i] != '\0')
 	{
 		if ((i == 0 && s[i] != c) || (s[i] == c && s[i - 1] != c))
@@ -31,13 +31,13 @@ char	*ft_counter_begin(char *s, char c)
 	return (aux_b);
 }
 
-char	*ft_counter_end(char *s, char c)
+char	*ft_counter_end(const char *s, char c)
 {
 	size_t	i;
 	size_t	t;
 	char	*aux_e;
 
-	aux_e = (((ft_strlen(s) / 2) + 1), 1);
+	aux_e = ft_calloc(((ft_strlen(s) / 2) + 1), 1);
 	while (s[i] != '\0')
 	{
 		if ((s[i] == c && s[i + 1] == '\0') || (s[i] == c && s[i - 1] != c))
@@ -61,7 +61,7 @@ void	*ft_free(char **ptr, int i)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	size_t	n;
 	char	**ptr;
@@ -71,7 +71,7 @@ char	**ft_split(char const *s, char c)
 	n = 0;
 	aux_b = ft_counter_begin(s, c);
 	aux_e = ft_counter_end(s, c);
-	ptr = (char **)malloc(ft_strlen(aux_b) * sizeoff(char *));
+	ptr = (char **)malloc(ft_strlen(aux_b) * sizeof(char *));
 	if (!ptr)
 		return (NULL);
 	while (n < ft_strlen(aux_b))

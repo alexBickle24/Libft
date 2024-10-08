@@ -6,7 +6,7 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:00:20 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/08 18:49:14 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/08 23:04:44 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		*(char *)(ptr + i) = 0;
 		i++;
 	}
-	return ((void *)(ptr - i));
+	return (ptr);
 }

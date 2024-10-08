@@ -6,7 +6,7 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 17:33:05 by alex              #+#    #+#             */
-/*   Updated: 2024/10/08 19:04:43 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/08 23:03:04 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ static void	ft_is_negative(int *num, int fd)
 	{
 		*num = *num * -1;
 		write(fd, "-", 1);
+		if (*num == -2147483648)
+		{
+			write(fd, "2", 1);
+			*num = 147483648;
+		}
 	}
 }
 
@@ -57,3 +62,13 @@ void	ft_putnbr_fd(int n, int fd)
 	n = (n % 10) + '0';
 	write(fd, &n, 1);
 }
+/*
+#include <limits.h>
+int main()
+{
+	ft_putnbr_fd(INT_MAX, 1); // 2147483647
+	ft_putchar_fd('\n', 1); //  -2147483648
+	ft_putnbr_fd(INT_MIN, 1);
+	ft_putchar_fd('\n', 1);
+}
+*/
