@@ -6,7 +6,7 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:04:17 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/08 19:52:19 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/08 21:17:54 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static size_t	ft_trim_right(const char *s1, const char *set)
 	aux = 1;
 	j = 0;
 	i = ft_strlen(s1);
+	count_right = 0;
 	while (s1[i] != '\0' && aux)
 	{
 		while (set[j] != '\0')
