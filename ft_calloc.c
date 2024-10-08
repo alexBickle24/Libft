@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:00:20 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/07 08:21:07 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/08 13:31:16 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return ((void *)ptr);
 }
-/*
-int	main(void)
-{
-	void	*aux;
-	size_t	num;
-	size_t	size;
-	int	i = 0;
-	
-	num = 1;
-	size = 12;
-	aux = ft_calloc(size, num);
-	printf("%c", *(char *)&aux[i]);(char *)&aux[i] pero el free lo tengo maal 
-	//porque he movido el puntero 
-	free(aux);
-	return (0);
-}
-*/
+

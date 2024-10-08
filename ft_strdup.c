@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:26:30 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/06 19:20:35 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/08 01:39:37 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s)
 	char	*ptr;
 	size_t	num_values;
 
+	if (!s)
+		return(NULL);
 	num_values = ft_strlen(s) + 1;
 	i = 0;
 	ptr = (char *)malloc(num_values * sizeof(char));

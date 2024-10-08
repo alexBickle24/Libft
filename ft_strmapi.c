@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 12:39:21 by alex              #+#    #+#             */
-/*   Updated: 2024/10/07 15:05:38 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/08 13:20:48 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*
-A cada uno de los valores de s, se le palica la funcion f, que devuelve un char 
-y el resultado se alacena en un array(creado en la memoria dinámica).
-*/
