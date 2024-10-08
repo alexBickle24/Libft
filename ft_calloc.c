@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:00:20 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/08 13:31:16 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/08 13:59:55 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	i = 0;
 	ptr = (char *)malloc((size * nmemb));
 	if (!(ptr))
-		return (0);
+		return (NULL);
 	while (i < (nmemb * size))
 	{
 		*(char *)(ptr + i) = 0;
 		i++;
 	}
-	return ((void *)ptr);
+	return ((void *)(ptr - i));
 }
 

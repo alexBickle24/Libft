@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:26:30 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/08 01:39:37 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/08 13:46:38 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	ptr = (char *)malloc(num_values * sizeof(char));
 	if (!ptr)
-		return(0);
+		return(NULL);
 	while (i < num_values)
 	{
 		ptr[i] = s[i];

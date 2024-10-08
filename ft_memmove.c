@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 12:36:51 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/05 21:42:23 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/08 13:40:45 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (i <= n)
 		{
-			*(char *)(dest + (n-i)) = *(char *)(src + (n-i));//1
+			*(char *)(dest + (n-i)) = *(char *)(src + (n-i));
 			i++;
 		}
 		return (dest);

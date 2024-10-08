@@ -6,12 +6,12 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:22:17 by alex              #+#    #+#             */
-/*   Updated: 2024/10/08 13:24:17 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/08 13:44:26 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
+
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
@@ -49,4 +49,3 @@ char	**ft_split(char const *s, char c)
 	return(ptr);
 }
 //me sobran 10 lineas.
-*/
