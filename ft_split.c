@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:22:17 by alex              #+#    #+#             */
-/*   Updated: 2024/10/08 22:34:44 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/09 04:50:26 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ char	*ft_counter_begin(const char *s, char c)
 	size_t	j;
 	char	*aux_b;
 
+	i = 0;
+	j = 0;
 	aux_b = ft_calloc(((ft_strlen(s) / 2) + 1), 1);
 	while (s[i] != '\0')
 	{
-		if ((i == 0 && s[i] != c) || (s[i] == c && s[i - 1] != c))
+		if ((i == 0 && s[i] != c) || (i >= 1 && (s[i] == c && s[i - 1] != c)))
 		{
 			aux_b[j] = i;
 			j++;
@@ -37,10 +39,13 @@ char	*ft_counter_end(const char *s, char c)
 	size_t	t;
 	char	*aux_e;
 
+	i = 0;
+	t = 0;
 	aux_e = ft_calloc(((ft_strlen(s) / 2) + 1), 1);
 	while (s[i] != '\0')
 	{
-		if ((s[i] == c && s[i + 1] == '\0') || (s[i] == c && s[i - 1] != c))
+		if ((s[i] == c && s[i + 1] == '\0')
+			|| (i >= 1 && (s[i] == c && s[i - 1] != c)))
 		{
 			aux_e[t] = i;
 			t++;
