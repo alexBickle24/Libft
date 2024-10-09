@@ -6,7 +6,7 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:47:51 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/08 19:06:03 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/09 19:53:51 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == (unsigned char)c)
+		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (0);
 }

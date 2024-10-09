@@ -6,11 +6,35 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:20:56 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/08 23:04:01 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/09 16:50:55 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h" 
+
+static	char	*ft_is_min(int num)
+{
+	unsigned int	j;
+	char			*ptr;
+	char			rest;
+
+	j = 10;
+	if (num != -2147483648)
+		return (NULL);
+	ptr = (char *)malloc(12);
+	if (!(ptr))
+		return (0);
+	ptr[11] = '\0';
+	while (num != 0)
+	{
+		rest = (num % 10) * -1 + '0';
+		ptr[j] = rest;
+		num = num / 10;
+		j--;
+	}
+	ptr[0] = '-';
+	return (ptr);
+}
 
 static unsigned char	ft_is_negative(int *num)
 {
@@ -42,6 +66,9 @@ char	*ft_itoa(int n)
 	char			*ptr;
 	char			rest;
 
+	ptr = ft_is_min(n);
+	if (ptr)
+		return (ptr);
 	i = ft_is_negative(&n);
 	j = ft_uint_len(n);
 	ptr = (char *)malloc(i + j + 1);
@@ -51,33 +78,11 @@ char	*ft_itoa(int n)
 	while (n >= 10)
 	{
 		rest = (n % 10) + '0';
-		ptr[j + i - 1] = rest;
+		ptr[j-- + i - 1] = rest;
 		n = n / 10;
-		j--;
 	}
 	ptr[0 + i] = n + '0';
 	if (i)
 		ptr[0] = '-';
 	return (ptr);
 }
-/*
-int	main(void)
-{
-	int		i;
-	char	*ptr;
-
-	i = 56754;
-	ptr = ft_itoa(i);
-	printf("%s\n", ptr);
-	free(ptr);
-	i = -188;
-	ptr = ft_itoa(i);
-	printf("%s\n", ptr);
-	free(ptr);
-	i = -56873;
-	ptr = ft_itoa(i);
-	printf("%s\n", ptr);
-	free(ptr);
-	return (0);
-}
-*/

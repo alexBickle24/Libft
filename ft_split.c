@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:22:17 by alex              #+#    #+#             */
-/*   Updated: 2024/10/09 04:50:26 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/09 18:20:28 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_counter_begin(const char *s, char c)
 {
@@ -73,6 +74,8 @@ char	**ft_split(const char *s, char c)
 	char	*aux_b;
 	char	*aux_e;
 
+	if (!ft_strchr(s, c))
+		return (NULL);
 	n = 0;
 	aux_b = ft_counter_begin(s, c);
 	aux_e = ft_counter_end(s, c);
@@ -98,7 +101,7 @@ int	main(void)
 	s1 = "comeme los huevos";
 	c = ' ';
 	ptr = ft_split(s1, c);
-	printf("%s", *(ptr + 1));
+	printf("%s", ptr[0]);
 	free(ptr);
 	return (0);
 }
