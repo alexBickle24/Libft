@@ -6,25 +6,27 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:22:17 by alex              #+#    #+#             */
-/*   Updated: 2024/10/09 18:20:28 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/10 21:54:36 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_counter_begin(const char *s, char c)
+static unsigned int	ft_count_words(const char *s, int c);
+
+static size_t	*ft_counter_begin(const char *s, char c)
 {
 	size_t	i;
 	size_t	j;
-	char	*aux_b;
+	size_t	*aux_b;
 
 	i = 0;
 	j = 0;
-	aux_b = ft_calloc(((ft_strlen(s) / 2) + 1), 1);
+	aux_b = malloc((ft_count_words(s, c)) * sizeof(size_t));
 	while (s[i] != '\0')
 	{
-		if ((i == 0 && s[i] != c) || (i >= 1 && (s[i] == c && s[i - 1] != c)))
+		if ((i == 0 && s[i] != c) || (i >= 1 && (s[i] != c && s[i - 1] == c)))
 		{
 			aux_b[j] = i;
 			j++;
@@ -34,19 +36,19 @@ char	*ft_counter_begin(const char *s, char c)
 	return (aux_b);
 }
 
-char	*ft_counter_end(const char *s, char c)
+static size_t	*ft_counter_end(const char *s, char c)
 {
 	size_t	i;
 	size_t	t;
-	char	*aux_e;
+	size_t	*aux_e;
 
 	i = 0;
 	t = 0;
-	aux_e = ft_calloc(((ft_strlen(s) / 2) + 1), 1);
+	aux_e = malloc((ft_count_words(s, c)) * sizeof(size_t));
 	while (s[i] != '\0')
 	{
-		if ((s[i] == c && s[i + 1] == '\0')
-			|| (i >= 1 && (s[i] == c && s[i - 1] != c)))
+		if ((s[i] != c && s[i + 1] == s[ft_strlen(s)])
+			|| (i >= 1 && (s[i] != c && s[i + 1] == c)))
 		{
 			aux_e[t] = i;
 			t++;
@@ -56,11 +58,27 @@ char	*ft_counter_end(const char *s, char c)
 	return (aux_e);
 }
 
-void	*ft_free(char **ptr, int i)
+static unsigned int	ft_count_words(const char *s, int c)
+{
+	unsigned int	count_words;
+	int				i;
+
+	i = 0;
+	count_words = 0;
+	while (s[i])
+	{
+		if ((i == 0 && s[i] != c) || (i >= 1 && (s[i] != c && s[i - 1] == c)))
+			count_words++;
+		i++;
+	}
+	return (count_words);
+}
+
+static void	*ft_free(char **ptr, int i)
 {
 	while (i >= 0)
 	{
-		free((ptr + i));
+		free(*(ptr + i));
 		i--;
 	}
 	free(ptr);
@@ -69,40 +87,26 @@ void	*ft_free(char **ptr, int i)
 
 char	**ft_split(const char *s, char c)
 {
-	size_t	n;
 	char	**ptr;
-	char	*aux_b;
-	char	*aux_e;
+	size_t	*aux_b;
+	size_t	*aux_e;
+	size_t	n;
 
-	if (!ft_strchr(s, c))
+	if (!s)
 		return (NULL);
-	n = 0;
 	aux_b = ft_counter_begin(s, c);
 	aux_e = ft_counter_end(s, c);
-	ptr = (char **)malloc(ft_strlen(aux_b) * sizeof(char *));
+	ptr = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!ptr)
 		return (NULL);
-	while (n < ft_strlen(aux_b))
+	n = 0;
+	while (n < ft_count_words(s, c))
 	{
 		*(ptr + n) = ft_substr(s, aux_b[n], (aux_e[n] - aux_b[n] + 1));
 		if (!*(ptr + n))
 			return (ft_free(ptr, n));
 		n++;
 	}
+	ptr[n] = 0;
 	return (ptr);
 }
-/*
-int	main(void)
-{
-	char	**ptr;
-	char	*s1;
-	char	c;
-
-	s1 = "comeme los huevos";
-	c = ' ';
-	ptr = ft_split(s1, c);
-	printf("%s", ptr[0]);
-	free(ptr);
-	return (0);
-}
-*/
