@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:04:17 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/10 02:25:12 by alex             ###   ########.fr       */
+/*   Updated: 2024/10/10 02:38:24 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i_right;
 	size_t	s1_trim;
 
-	if (!set || !s1)//set lo entiendo pero s1 no
+	if (!set || !s1)
 		return (0);
 	i_left = ft_trim_left(s1, set);
 	i_right = ft_trim_right(s1, set);
