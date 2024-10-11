@@ -6,7 +6,7 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:22:17 by alex              #+#    #+#             */
-/*   Updated: 2024/10/11 17:40:46 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/11 20:07:27 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,8 @@ char	**ft_split(const char *s, char c)
 	if (!aux_e)
 		return (free(aux_b), NULL);
 	ptr = (char **)ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
-	return (free (aux_b), free (aux_e), NULL);
+	if (!ptr)
+		return (free(aux_b), free(aux_e), NULL);
 	n = -1;
 	while (++n < ft_count_words(s, c))
 	{
