@@ -6,12 +6,11 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:22:17 by alex              #+#    #+#             */
-/*   Updated: 2024/10/10 21:54:36 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/11 17:40:46 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static unsigned int	ft_count_words(const char *s, int c);
 
@@ -24,6 +23,8 @@ static size_t	*ft_counter_begin(const char *s, char c)
 	i = 0;
 	j = 0;
 	aux_b = malloc((ft_count_words(s, c)) * sizeof(size_t));
+	if (!aux_b)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		if ((i == 0 && s[i] != c) || (i >= 1 && (s[i] != c && s[i - 1] == c)))
@@ -45,6 +46,8 @@ static size_t	*ft_counter_end(const char *s, char c)
 	i = 0;
 	t = 0;
 	aux_e = malloc((ft_count_words(s, c)) * sizeof(size_t));
+	if (!aux_e)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		if ((s[i] != c && s[i + 1] == s[ft_strlen(s)])
@@ -74,13 +77,15 @@ static unsigned int	ft_count_words(const char *s, int c)
 	return (count_words);
 }
 
-static void	*ft_free(char **ptr, int i)
+static void	*ft_free(char **ptr, int i, size_t *aux_b, size_t *aux_e)
 {
 	while (i >= 0)
 	{
 		free(*(ptr + i));
 		i--;
 	}
+	free(aux_b);
+	free(aux_e);
 	free(ptr);
 	return (NULL);
 }
@@ -95,18 +100,19 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (NULL);
 	aux_b = ft_counter_begin(s, c);
-	aux_e = ft_counter_end(s, c);
-	ptr = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
-	if (!ptr)
+	if (!aux_b)
 		return (NULL);
-	n = 0;
-	while (n < ft_count_words(s, c))
+	aux_e = ft_counter_end(s, c);
+	if (!aux_e)
+		return (free(aux_b), NULL);
+	ptr = (char **)ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
+	return (free (aux_b), free (aux_e), NULL);
+	n = -1;
+	while (++n < ft_count_words(s, c))
 	{
 		*(ptr + n) = ft_substr(s, aux_b[n], (aux_e[n] - aux_b[n] + 1));
 		if (!*(ptr + n))
-			return (ft_free(ptr, n));
-		n++;
+			return (ft_free(ptr, n, aux_b, aux_e));
 	}
-	ptr[n] = 0;
-	return (ptr);
+	return (free(aux_b), free(aux_e), ptr);
 }
