@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:22:17 by alex              #+#    #+#             */
-/*   Updated: 2024/10/11 20:07:27 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/14 23:01:10 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static size_t	*ft_counter_end(const char *s, char c)
 	while (s[i] != '\0')
 	{
 		if ((s[i] != c && s[i + 1] == s[ft_strlen(s)])
-			|| (i >= 1 && (s[i] != c && s[i + 1] == c)))
+			|| ((s[i] != c && s[i + 1] == c)))
 		{
 			aux_e[t] = i;
 			t++;
