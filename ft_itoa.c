@@ -6,12 +6,11 @@
 /*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:20:56 by alcarril          #+#    #+#             */
-/*   Updated: 2024/10/11 17:34:08 by alcarril         ###   ########.fr       */
+/*   Updated: 2024/10/15 19:22:11 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
-#include <stdio.h>
 
 static	char	*ft_is_min(int num)
 {
